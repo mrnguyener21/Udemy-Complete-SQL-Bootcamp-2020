@@ -81,3 +81,19 @@ select customer_id, count(customer_id) from payment group by customer_id having 
 --HAVING CHALLENGE 2
 -- What are the customer ids of customers who have spent more than $100 in payment transactions with our staff_id member 2?
 select customer_id, sum(amount) from payment where staff_id = 2 group by customer_id having sum(amount) > 100
+
+-- ASSESSMENT TEST QUESTION 1
+-- Return the customer IDS of customers who have spent at least $110 with the staff member who has an ID of 2
+-- the answer should be customers 187 and 148
+select customer_id, sum(amount) from payment where staff_id = 2 group by customer_id having sum(amount) >= 110
+
+
+-- ASSESSMENT TEST QUESTION 2
+-- How many films begin with the letter J?
+-- the answer should be 20
+select count(title) from film where title like 'J%'
+
+-- ASSESSMENT TEST QUESTION 3
+-- What customer has the highest customer ID number whose name starts with an 'E' and has an address ID lower than 500?
+-- The answer is Eddie Tomlin
+select first_name, last_name from customer where first_name ilike 'e%' and address_id < 500 order by customer_id desc limit 1
