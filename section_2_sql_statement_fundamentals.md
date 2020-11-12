@@ -71,3 +71,13 @@ select rating, round(avg(replacement_cost),2) from film group by rating
 -- we are running a promotion to reward our top 5 customers with coupons.
 -- what are the customer ids ofthe top 5 customers by total spend?
 select customer_id, sum(amount) from payment group by customer_id order by sum(amount) desc limit 5
+
+-- HAVING CHALLENGE 1
+-- We are launching a platinum service for our most loyal customers. we will assign platinum status to customers that have had 40 or more transacction payments.
+-- what customer_ids are eligible for platinum status?
+select * from payment
+select customer_id, count(customer_id) from payment group by customer_id having count(customer_id) >= 40
+
+--HAVING CHALLENGE 2
+-- What are the customer ids of customers who have spent more than $100 in payment transactions with our staff_id member 2?
+select customer_id, sum(amount) from payment where staff_id = 2 group by customer_id having sum(amount) > 100
