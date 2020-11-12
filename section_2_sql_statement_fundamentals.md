@@ -52,3 +52,22 @@ select count(*) from film where rating = 'R' and replacement_cost between 5 and 
 --General Challenge 1 -- challenge 5
 -- How many films have the word Truman somewhere in the title?
 select count(*) from film where title like '%Truman%'
+
+-- GROUP BY CHALLENGE 1
+-- we have two staff members, with staff IDS 1 and 2. 
+-- we want to give a bonus to the staff member that handled the most payments(most in terms of number payments processed, not total dollar amount).
+-- how many payments did each staff member handle and who gets the bonus?
+select * from payment
+select staff_id, count(*) from payment group by staff_id 
+
+-- GROUP BY CHALLENGE 2
+-- corporate HQ is conducting a study on the relationsship between replacement cost and a movie MPAA rating(ex: G, PG, R, etc...)
+-- what is the average replacement cost per MPAA rating?
+-- note: you may need to expand the AVG column to view the results
+
+select rating, round(avg(replacement_cost),2) from film group by rating 
+
+---- GROUP BY CHALLENGE 3
+-- we are running a promotion to reward our top 5 customers with coupons.
+-- what are the customer ids ofthe top 5 customers by total spend?
+select customer_id, sum(amount) from payment group by customer_id order by sum(amount) desc limit 5
