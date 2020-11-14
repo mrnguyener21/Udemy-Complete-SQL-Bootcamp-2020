@@ -97,3 +97,8 @@ select count(title) from film where title like 'J%'
 -- What customer has the highest customer ID number whose name starts with an 'E' and has an address ID lower than 500?
 -- The answer is Eddie Tomlin
 select first_name, last_name from customer where first_name ilike 'e%' and address_id < 500 order by customer_id desc limit 1
+
+-- JOIN CHALLENGE TASK 1
+-- california sales tax laws have changed and we need to alert our customers to this through email
+-- what are the emailof the customers who live in california?
+select district, email from address join customer on address.address_id = customer.address_id where address.district = 'California'
