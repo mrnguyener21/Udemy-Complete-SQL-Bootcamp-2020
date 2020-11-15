@@ -102,3 +102,8 @@ select first_name, last_name from customer where first_name ilike 'e%' and addre
 -- california sales tax laws have changed and we need to alert our customers to this through email
 -- what are the emailof the customers who live in california?
 select district, email from address join customer on address.address_id = customer.address_id where address.district = 'California'
+
+-- Join Challenge 2
+-- a customer walks in and is a huge fan of the actor 'Nick Wahlberg' and wants to know which movies he is in.
+-- get a list of all the movies nick wahlberg has been in
+select title, first_name, last_name from film_actor join actor on film_actor.actor_id = actor.actor_id join film on film_actor.film_id = film.film_id where first_name = 'Nick' and last_name = 'Wahlberg'
