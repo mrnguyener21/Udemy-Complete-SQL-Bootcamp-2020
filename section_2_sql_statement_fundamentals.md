@@ -120,3 +120,9 @@ select  current_date
 -- format your answer to return back the full month name
 select distinct(to_char(payment_date, 'MONTH'))
 from payment
+
+--timestamp and extract challenge 2
+-- how many payments occured on a monday?
+select count(to_char(payment_date, 'dy'))
+from payment
+where to_char(payment_date, 'dy') = 'mon'
