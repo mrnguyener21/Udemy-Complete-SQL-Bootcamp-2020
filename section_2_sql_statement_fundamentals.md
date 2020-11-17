@@ -114,3 +114,9 @@ show timezone
 select now()
 select timeofday() --same as select now() but as a string
 select  current_date
+
+-- timestamp and extract challenge 1
+-- during which months did payments occur?
+-- format your answer to return back the full month name
+select distinct(to_char(payment_date, 'MONTH'))
+from payment
