@@ -126,3 +126,12 @@ from payment
 select count(to_char(payment_date, 'dy'))
 from payment
 where to_char(payment_date, 'dy') = 'mon'
+
+select * 
+from film
+
+select round(rental_rate/replacement_cost,4)*100 as percent_cost
+from film
+
+select 0.1 * replacement_cost as depost 
+from film
