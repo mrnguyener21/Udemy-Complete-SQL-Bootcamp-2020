@@ -170,3 +170,9 @@ where exists
 (select * from payment as p
  where p.customer_id = c.customer_id
  and amount > 11)
+
+ select f1.title, f2.title, f1.length
+from film as f1
+join film as f2 on 
+f1.film_id != f2.film_id
+and f1.length = f2.length
