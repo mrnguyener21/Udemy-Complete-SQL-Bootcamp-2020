@@ -135,3 +135,14 @@ from film
 
 select 0.1 * replacement_cost as depost 
 from film
+
+select * from customer
+
+select length(first_name)
+from customer
+
+select first_name || ' ' || last_name as full_name
+from customer
+
+select lower(left(first_name,1) || last_name || '@gmail.com') as custom_email
+from customer
