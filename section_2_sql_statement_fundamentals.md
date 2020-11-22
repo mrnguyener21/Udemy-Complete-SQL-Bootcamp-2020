@@ -201,3 +201,7 @@ select * from cd.facilities where name like '%Tennis%'
 --sql assessment 2 question 6
 --how can you retreive the data of facilities with ID 1 and 5
 select * from cd.facilities where facid in(1,5)
+
+--sql assessment 2 question 7
+--how can you produce a list of members who joined after the start of september 2012? return the memid, surname, firstname and joindate of the members in question
+select memid, surname, firstname, joindate  from cd.members where joindate > '2012-09-01'
