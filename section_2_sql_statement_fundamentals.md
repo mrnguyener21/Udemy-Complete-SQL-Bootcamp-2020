@@ -193,3 +193,7 @@ select * from cd.facilities where membercost > 0
 -- how can you produce a list of facilities that charge a fee to members and that fee is less than 1/50th of the monthly maintence cost?
 -- return the facid, facility name, member cost and monthly mantenance of the facilities in question
 select facid, name, membercost, monthlymaintenance from cd.facilities where membercost > 0 and membercost < (monthlymaintenance * 0.02)
+
+--sql assessment 2 question 5
+-- how can you produce a list of all facilities with the word 'Tennis' in their name?
+select * from cd.facilities where name like '%Tennis%'
