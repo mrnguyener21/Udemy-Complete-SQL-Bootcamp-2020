@@ -197,3 +197,7 @@ select facid, name, membercost, monthlymaintenance from cd.facilities where memb
 --sql assessment 2 question 5
 -- how can you produce a list of all facilities with the word 'Tennis' in their name?
 select * from cd.facilities where name like '%Tennis%'
+
+--sql assessment 2 question 6
+--how can you retreive the data of facilities with ID 1 and 5
+select * from cd.facilities where facid in(1,5)
