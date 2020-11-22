@@ -225,3 +225,8 @@ FROM cd.bookings
 WHERE cd.bookings.starttime BETWEEN '2012-09-01' AND '2012-09-30'
 GROUP by facid
 ORDER BY SUM(slots);
+
+--sql assessment 2 question 12
+--produce a list of facilities with more than 1000 slots booked. Produce an output table consisting of facility id and total slots sorted by facility id
+--each one has a facid, so we probably have to count the total slots associated to each facid
+select facid, sum(slots) from cd.bookings group by facid having sum(slots) > 1000 order by facid
