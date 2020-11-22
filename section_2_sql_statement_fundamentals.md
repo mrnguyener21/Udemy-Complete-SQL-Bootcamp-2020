@@ -209,3 +209,8 @@ select memid, surname, firstname, joindate  from cd.members where joindate > '20
 --sql assessment 2 question 8
 -- how can you produce an ordered list on the first 10 surnames in the members table? the list must not contain duplicates
 select distinct(surname) from cd.members order by surname limit 10
+
+--sql assessment 2 question 9
+-- you'd like to get the signup date of your last member. how can you retrieve this info?
+select * from cd.members
+select joindate from cd.members order by joindate desc limit 1
