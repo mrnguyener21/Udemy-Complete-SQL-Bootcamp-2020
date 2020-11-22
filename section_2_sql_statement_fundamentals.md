@@ -185,6 +185,11 @@ select * from cd.facilities
 -- you want to print out a list of all of the facilities and their cost to members. how would you retreive a list of only facility names and cost?
 select name, membercost from cd.facilities
 
---sql assessment test 2 question 2
+--sql assessment test 2 question 3
 -- how can you produce a list of facilities that charge a fee to members?
 select * from cd.facilities where membercost > 0
+
+--sql assessment test 2 question 4
+-- how can you produce a list of facilities that charge a fee to members and that fee is less than 1/50th of the monthly maintence cost?
+-- return the facid, facility name, member cost and monthly mantenance of the facilities in question
+select facid, name, membercost, monthlymaintenance from cd.facilities where membercost > 0 and membercost < (monthlymaintenance * 0.02)
