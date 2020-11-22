@@ -180,3 +180,7 @@ and f1.length = f2.length
 --sql assessment test 2 question 1
 --how can you retrieve all of the information from the cd.facilities table?
 select * from cd.facilities
+
+--sql assessment test 2 question 2
+-- you want to print out a list of all of the facilities and their cost to members. how would you retreive a list of only facility names and cost?
+select name, membercost from cd.facilities
