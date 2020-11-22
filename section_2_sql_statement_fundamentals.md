@@ -214,3 +214,6 @@ select distinct(surname) from cd.members order by surname limit 10
 -- you'd like to get the signup date of your last member. how can you retrieve this info?
 select * from cd.members
 select joindate from cd.members order by joindate desc limit 1
+--sql assessment 2 question 10
+-- produce a count of the number of facilities that have a cost ot guests of 10 or more
+select count (guestcost) from cd.facilities where guestcost > 10
