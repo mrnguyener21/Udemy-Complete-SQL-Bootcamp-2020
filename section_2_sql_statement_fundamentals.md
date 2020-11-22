@@ -217,3 +217,11 @@ select joindate from cd.members order by joindate desc limit 1
 --sql assessment 2 question 10
 -- produce a count of the number of facilities that have a cost ot guests of 10 or more
 select count (guestcost) from cd.facilities where guestcost > 10
+
+--sql assessment 2 question 11
+--produce a list of the total number of slots booked perfacility in the month of September 2012. Produce an output table consisting of the facilityid and slots, sorted by the number of slots.
+SELECT facid, SUM(slots) AS Total_Number_of_Slots
+FROM cd.bookings
+WHERE cd.bookings.starttime BETWEEN '2012-09-01' AND '2012-09-30'
+GROUP by facid
+ORDER BY SUM(slots);
