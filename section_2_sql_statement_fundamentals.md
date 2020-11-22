@@ -205,3 +205,7 @@ select * from cd.facilities where facid in(1,5)
 --sql assessment 2 question 7
 --how can you produce a list of members who joined after the start of september 2012? return the memid, surname, firstname and joindate of the members in question
 select memid, surname, firstname, joindate  from cd.members where joindate > '2012-09-01'
+
+--sql assessment 2 question 8
+-- how can you produce an ordered list on the first 10 surnames in the members table? the list must not contain duplicates
+select distinct(surname) from cd.members order by surname limit 10
