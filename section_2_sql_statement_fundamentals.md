@@ -176,3 +176,7 @@ from film as f1
 join film as f2 on 
 f1.film_id != f2.film_id
 and f1.length = f2.length
+
+--sql assessment test 2 question 1
+--how can you retrieve all of the information from the cd.facilities table?
+select * from cd.facilities
