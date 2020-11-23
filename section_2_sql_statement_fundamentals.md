@@ -243,3 +243,16 @@ select starttime, "name" from cd.bookings join cd.facilities on cd.bookings.faci
 --sql assessment 2 question 14
 --how can you produce a list of the start times for bookings by members named 'David Farrell'
 select starttime from cd.bookings join cd.facilities on cd.bookings.facid = cd.facilities.facid join cd.members on cd.bookings.memid = cd.members.memid where firstname = 'David' and surname = 'Farrell'
+
+
+ SQL DATA TYPES
+ -booleans
+ -characters
+ -numeric
+ -temporal : date, time, time stamp and interval
+
+ create table account_job (
+	user_id integer references account(user_id),
+	job_id integer references job(job_id),
+	hire_date timestamp
+)
