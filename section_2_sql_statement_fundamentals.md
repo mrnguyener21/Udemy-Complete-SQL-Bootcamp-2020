@@ -230,3 +230,12 @@ ORDER BY SUM(slots);
 --produce a list of facilities with more than 1000 slots booked. Produce an output table consisting of facility id and total slots sorted by facility id
 --each one has a facid, so we probably have to count the total slots associated to each facid
 select facid, sum(slots) from cd.bookings group by facid having sum(slots) > 1000 order by facid
+
+--sql assessment 2 question 13
+-- how can you produce a list of the start times for bookings for tennis courts, for the date'2012-09'21'? return a list of start time and facility name parings, ordered by the time
+
+--my notes
+--join by facid, probably inner join since we want them to have matching facid to the facilities with tennis court in them
+--and then we have to use the starttime column from bookings for the date
+
+select starttime, "name" from cd.bookings join cd.facilities on cd.bookings.facid = cd.facilities.facid where cd.facilities.name like 'Tennis Court%' and starttime BETWEEN '2012-09-21 00:00:00' AND '2012-09-21 23:59:59' order by starttime
