@@ -239,3 +239,7 @@ select facid, sum(slots) from cd.bookings group by facid having sum(slots) > 100
 --and then we have to use the starttime column from bookings for the date
 
 select starttime, "name" from cd.bookings join cd.facilities on cd.bookings.facid = cd.facilities.facid where cd.facilities.name like 'Tennis Court%' and starttime BETWEEN '2012-09-21 00:00:00' AND '2012-09-21 23:59:59' order by starttime
+
+--sql assessment 2 question 14
+--how can you produce a list of the start times for bookings by members named 'David Farrell'
+select starttime from cd.bookings join cd.facilities on cd.bookings.facid = cd.facilities.facid join cd.members on cd.bookings.memid = cd.members.memid where firstname = 'David' and surname = 'Farrell'
