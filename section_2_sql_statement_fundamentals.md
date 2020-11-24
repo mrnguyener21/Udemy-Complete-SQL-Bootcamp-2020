@@ -296,3 +296,6 @@ select* from new_info
 
 alter table new_info
 alter column people drop not null
+
+alter table new_info
+drop column people
