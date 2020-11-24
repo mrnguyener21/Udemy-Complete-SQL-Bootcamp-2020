@@ -348,4 +348,32 @@ values
  2035,
  5
 )
-l
+
+create table teacher(
+	teacher_id serial primary key,
+	first_name varchar(500),
+	last_name varchar(500),
+	homeroom_number integer,
+	department varchar(500),
+	email varchar(500) unique,
+	phone varchar(500) unique not null
+)
+
+insert into teacher(
+	first_name,
+	last_name,
+	homeroom_number,
+	department,
+	email,
+	phone
+)
+values(
+'Jonas',
+'Salk',
+5,
+'Biology',
+'jsalk@school.org',
+'777-555-4321'
+)
+
+select * from teacher
