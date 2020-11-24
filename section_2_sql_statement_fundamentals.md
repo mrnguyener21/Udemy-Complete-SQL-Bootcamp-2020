@@ -299,3 +299,20 @@ alter column people drop not null
 
 alter table new_info
 drop column people
+
+insert into employees(
+first_name,
+	last_name,
+	birthdate,
+	hire_date,
+	salary
+)
+values
+('Sammy',
+ 'Smith',
+ '1990-11-03',
+ '2010-01-01',
+ 100
+)
+
+select * from employees
