@@ -281,3 +281,7 @@ where account_job.user_id = account.user_id
 update account
 set last_login = current_timestamp
 returning email, created_on, last_login
+
+delete from job
+ where job_name = 'cowboy'
+ returning job_id, job_name
