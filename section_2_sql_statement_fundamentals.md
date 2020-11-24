@@ -429,3 +429,10 @@ sum(case rating
 	else 0
 end) as pg13
 from film
+
+select cast('5' as integer) as new_int
+select '5' :: integer
+
+select * from rental
+
+select char_length(cast(inventory_id as varchar)) from rental
