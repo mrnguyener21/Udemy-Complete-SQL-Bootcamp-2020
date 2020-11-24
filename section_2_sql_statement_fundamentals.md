@@ -316,3 +316,35 @@ values
 )
 
 select * from employees
+
+-- assessment test 3 question 1
+create table students(
+	teacher_id serial primary key,
+	first_name varchar(50),
+	last_name varchar(50),
+	homeroom_number integer,
+	department varchar(50),
+	email varchar(500) unique,
+	phone integer unique not null
+)
+
+alter table students add phone varchar(500) unique not null
+
+select * from students
+
+insert into students (
+	first_name,
+	last_name,
+	student_id,
+	phone,
+	graduation_year,
+	homeroom_number
+)
+values
+('Mark',
+ 'Watney',
+ 1,
+ '777-555-1234',
+ 2035,
+ 5
+)
