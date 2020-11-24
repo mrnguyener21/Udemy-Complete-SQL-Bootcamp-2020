@@ -271,3 +271,13 @@ select * from account_job
 insert into account_job(user_id, job_id, hire_date)
 values
 (1,1, current_timestamp)
+
+//updating using values from another table (update join)
+update account_job 
+set hire_date = account.created_on
+from account
+where account_job.user_id = account.user_id
+
+update account
+set last_login = current_timestamp
+returning email, created_on, last_login
