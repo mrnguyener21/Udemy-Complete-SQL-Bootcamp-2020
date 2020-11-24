@@ -436,3 +436,8 @@ select '5' :: integer
 select * from rental
 
 select char_length(cast(inventory_id as varchar)) from rental
+
+select (
+sum(case when department = 'A' then 1 else 0 end)/ nullif(sum(case when department = 'B' then 1 else 0 end),0)
+) as department_ratio
+from depts
