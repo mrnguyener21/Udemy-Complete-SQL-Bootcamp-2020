@@ -285,3 +285,14 @@ returning email, created_on, last_login
 delete from job
  where job_name = 'cowboy'
  returning job_id, job_name
+
+ alter table information
+rename to new_info
+
+alter table new_info
+rename column person to people
+
+select* from new_info
+
+alter table new_info
+alter column people drop not null
