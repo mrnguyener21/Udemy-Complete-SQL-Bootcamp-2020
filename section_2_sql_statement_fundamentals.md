@@ -460,3 +460,5 @@ drop view customer _info
 
 --below is an example to change view name
 alter view victor_customer_info to v_c_info
+
+DONE
