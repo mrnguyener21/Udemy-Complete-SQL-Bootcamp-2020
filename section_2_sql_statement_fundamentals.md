@@ -441,3 +441,22 @@ select (
 sum(case when department = 'A' then 1 else 0 end)/ nullif(sum(case when department = 'B' then 1 else 0 end),0)
 ) as department_ratio
 from depts
+
+select * from customer
+create view victor_customer_view as 
+select first_name,last_name, address from customer
+join address
+on customer.address_id = address.address_id
+
+select * from victor_customer_view
+
+create or replace view victor_customer_view as
+select first_name,last_name,address,district from customer
+join address
+on customer.address_id = address.address_id
+
+--below is how to delete a view
+drop view customer _info
+
+--below is an example to change view name
+alter view victor_customer_info to v_c_info
