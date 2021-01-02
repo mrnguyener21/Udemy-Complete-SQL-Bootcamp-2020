@@ -54,3 +54,4 @@ select count(title) from film where title like 'J%'
 --3) What customer has the highest customer ID number whose name starts with an 'E' and has an address ID lower than 500?
 -- The answer is Eddie Tomlin
 select first_name, last_name from customer where address_id < 500 and first_name like 'E%' order by customer_id DESC limit 1 -->
+`           
