@@ -55,7 +55,7 @@ select count(title) from film where title like 'J%'
 -- The answer is Eddie Tomlin
 select first_name, last_name from customer where address_id < 500 and first_name like 'E%' order by customer_id DESC limit 1 -->
 
-JOIN Challenge Task
+<!-- JOIN Challenge Task
 
 -- california sales tax laws have changed and we need to alert our customers to this through email.
 -- What are the emails of the customers who live in California?
@@ -71,5 +71,12 @@ select * from actor
 select * from film
 select * from film_actor
 
-select film.title, actor.first_name, actor.last_name from film join film_actor on film.film_id = film_actor.film_id join actor on film_actor.actor_id = actor.actor_id where actor.first_name = 'Nick' and  actor.last_name = 'Wahlberg'
+select film.title, actor.first_name, actor.last_name from film join film_actor on film.film_id = film_actor.film_id join actor on film_actor.actor_id = actor.actor_id where actor.first_name = 'Nick' and  actor.last_name = 'Wahlberg' -->
 
+<!-- TIMESTAMPS AND EXTRACT
+During which months did payments occur?--
+--Format your answer to return back the full month name--
+select distinct(to_char(payment_date,'month')) from payment
+
+--How many payments occured on a monday?--
+select count(*) from payment where extract(dow from payment_date) = 1 -->
