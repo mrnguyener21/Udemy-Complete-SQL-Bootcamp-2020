@@ -54,4 +54,22 @@ select count(title) from film where title like 'J%'
 --3) What customer has the highest customer ID number whose name starts with an 'E' and has an address ID lower than 500?
 -- The answer is Eddie Tomlin
 select first_name, last_name from customer where address_id < 500 and first_name like 'E%' order by customer_id DESC limit 1 -->
-`           
+
+JOIN Challenge Task
+
+-- california sales tax laws have changed and we need to alert our customers to this through email.
+-- What are the emails of the customers who live in California?
+select * from address
+select * from customer
+
+select district, email from address join customer on address.address_id = customer.address_id where district = 'California'
+
+--A customer walks in and is ah uge fan of the actor 'Nick wahlberg' and wants to know which movies he is in.--
+-- get a list of all the movies 'Nick Wahlberg' has been in. --
+-- We want title, first name and last name --
+select * from actor
+select * from film
+select * from film_actor
+
+select film.title, actor.first_name, actor.last_name from film join film_actor on film.film_id = film_actor.film_id join actor on film_actor.actor_id = actor.actor_id where actor.first_name = 'Nick' and  actor.last_name = 'Wahlberg'
+
