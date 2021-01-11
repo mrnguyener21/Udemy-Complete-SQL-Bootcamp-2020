@@ -82,19 +82,42 @@ select distinct(to_char(payment_date,'month')) from payment
 select count(*) from payment where extract(dow from payment_date) = 1 -->
 
 ASSESSMENT 2
---How can you retrieve all the information from the cd.facilities table?
-select * from cd.facilities
+-- How can you retrieve all the info from the cd.facilities table?
 
--- You want to print out a list of all of the facilities and their cost to members. 
--- How would you retrieve a list of only facility names and costs?
-select name, membercost from cd.facilities
+--You want to print out a list of all of the facilities and their cost to members.
+--How would you retrieve a list of only names and cost?
+
 
 --How can you produce a list of facilities that charge a fee to members?
-select * from cd.facilities where membercost > 0
 
---How can you produce a list of facilities that charge a fee to members and that fee is less than 1/50th of the monthly maintenance cost? 
--- Return the facid, facility name, member cost, monthly maintenance of the facilities in question.
-select facid, name, membercost, monthlymaintenance from cd.facilities where membercost > 0 and membercost < monthlymaintenance/50
+--How can you produce a list of facilities that charge a fee to members, and that fee is less  than 1/50th of the  monthly maintenance cost?
+-- Return the facid, facility name, member cost and monthly maintenence of the facilities in question.
 
---How can you producee a list of all facilities with the word 'Tennis' in their name?
-select * from cd.facilities where name like '%Tennis%'
+
+--How can you produce a list of all facilities with the word 'Tennis' in their name?
+
+--How can you retrieve the details of facilities with ID 1 and 5?
+--Try to do it without using the OR operator.
+
+--How can you produce a list of members who joined after the start of september 2012?
+--Return the memid, surname, firstname, and joindate of the members in question?
+
+
+--How can you produce an ordered list of  the first 10 surnames in the memebrs table?
+--The table must not contain duplicates.
+
+--You'd like to get the sign up date of your last member. How can you retrieve this information?
+
+--Produce a count of the number of facilities thatt have a cost ot guests of 10 or more.
+
+--Produce a list of the total number of slots booked pper facility in the month of september 2012.
+--Produce an output table consisting of facility id and slots, sorted by the number of slots.
+
+--Produce a list of facilities with more than 1000 slots booked. 
+--Produce an output table consisting of facility id and total slots, sorted by facility id.
+
+
+--How can you produce a list of the start times for bookings for tennis courts, for the date '2012-09-21'?
+--Return a list of start time aand facility name pairings, ordered by the time?
+
+--How can you produce a list of the start times for bookings by members named 'David Farrell'?
