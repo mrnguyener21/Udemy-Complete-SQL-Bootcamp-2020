@@ -81,24 +81,31 @@ select distinct(to_char(payment_date,'month')) from payment
 --How many payments occured on a monday?--
 select count(*) from payment where extract(dow from payment_date) = 1 -->
 
-ASSESSMENT 2
--- How can you retrieve all the info from the cd.facilities table?
+A-- ASSESSMENT 2
+--1 How can you retrieve all the info from the cd.facilities table?
+select * from cd.facilities
 
---You want to print out a list of all of the facilities and their cost to members.
+--2 You want to print out a list of all of the facilities and their cost to members.
 --How would you retrieve a list of only names and cost?
+select name, membercost from cd.facilities 
+
+--3 How can you produce a list of facilities that charge a fee to members?
+select * from cd.facilities where membercost > 0
 
 
---How can you produce a list of facilities that charge a fee to members?
-
---How can you produce a list of facilities that charge a fee to members, and that fee is less  than 1/50th of the  monthly maintenance cost?
+--4 How can you produce a list of facilities that charge a fee to members, and that fee is less  than 1/50th of the  monthly maintenance cost?
 -- Return the facid, facility name, member cost and monthly maintenence of the facilities in question.
+select facid, name, membercost, monthlymaintenance from cd.facilities where membercost < monthlymaintenance/50 and membercost > 0
+
+--5 How can you produce a list of all facilities with the word 'Tennis' in their name?
+select * from cd.facilities where name like '%Tennis%'
 
 
---How can you produce a list of all facilities with the word 'Tennis' in their name?
-
---How can you retrieve the details of facilities with ID 1 and 5?
+--6 How can you retrieve the details of facilities with ID 1 and 5?
 --Try to do it without using the OR operator.
-
+select * from cd.facilities where facid = 1 or facid = 5
+--Below is without using the or operator
+select * from cd.facilities where facid IN(1,5)
 --How can you produce a list of members who joined after the start of september 2012?
 --Return the memid, surname, firstname, and joindate of the members in question?
 
