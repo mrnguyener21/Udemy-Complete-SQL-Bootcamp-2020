@@ -106,16 +106,24 @@ select * from cd.facilities where name like '%Tennis%'
 select * from cd.facilities where facid = 1 or facid = 5
 --Below is without using the or operator
 select * from cd.facilities where facid IN(1,5)
---How can you produce a list of members who joined after the start of september 2012?
+
+--7 How can you produce a list of members who joined after the start of september 2012?
 --Return the memid, surname, firstname, and joindate of the members in question?
+select memid, surname, firstname, joindate from cd.members where joindate >= '2012-09-01'
 
-
---How can you produce an ordered list of  the first 10 surnames in the memebrs table?
+--8 How can you produce an ordered list of  the first 10 surnames in the memebrs table?
 --The table must not contain duplicates.
+select distinct surname from cd.members order by surname limit 10
 
---You'd like to get the sign up date of your last member. How can you retrieve this information?
 
---Produce a count of the number of facilities thatt have a cost ot guests of 10 or more.
+--9 You'd like to get the sign up date of your last member. How can you retrieve this information?
+select joindate from cd.members order by joindate desc limit 1
+--below is the how the instructor went about it
+select max(joindate) as latest_signbup from cd.members
+
+--10 Produce a count of the number of facilities thatt have a cost ot guests of 10 or more.
+select * from cd.facilities
+select count(guestcost) from cd.facilities where guestcost > 10
 
 --Produce a list of the total number of slots booked pper facility in the month of september 2012.
 --Produce an output table consisting of facility id and slots, sorted by the number of slots.
