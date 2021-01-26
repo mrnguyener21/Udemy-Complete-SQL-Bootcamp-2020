@@ -109,6 +109,49 @@ ASSESSMENT 2
 --You'd like to get the sign up date of your last member. How can you retrieve this information?
 
 --Produce a count of the number of facilities thatt have a cost ot guests of 10 or more.
+A-- ASSESSMENT 2
+--1 How can you retrieve all the info from the cd.facilities table?
+select * from cd.facilities
+
+--2 You want to print out a list of all of the facilities and their cost to members.
+--How would you retrieve a list of only names and cost?
+select name, membercost from cd.facilities 
+
+--3 How can you produce a list of facilities that charge a fee to members?
+select * from cd.facilities where membercost > 0
+
+
+--4 How can you produce a list of facilities that charge a fee to members, and that fee is less  than 1/50th of the  monthly maintenance cost?
+-- Return the facid, facility name, member cost and monthly maintenence of the facilities in question.
+select facid, name, membercost, monthlymaintenance from cd.facilities where membercost < monthlymaintenance/50 and membercost > 0
+
+--5 How can you produce a list of all facilities with the word 'Tennis' in their name?
+select * from cd.facilities where name like '%Tennis%'
+
+
+--6 How can you retrieve the details of facilities with ID 1 and 5?
+--Try to do it without using the OR operator.
+select * from cd.facilities where facid = 1 or facid = 5
+--Below is without using the or operator
+select * from cd.facilities where facid IN(1,5)
+
+--7 How can you produce a list of members who joined after the start of september 2012?
+--Return the memid, surname, firstname, and joindate of the members in question?
+select memid, surname, firstname, joindate from cd.members where joindate >= '2012-09-01'
+
+--8 How can you produce an ordered list of  the first 10 surnames in the memebrs table?
+--The table must not contain duplicates.
+select distinct surname from cd.members order by surname limit 10
+
+
+--9 You'd like to get the sign up date of your last member. How can you retrieve this information?
+select joindate from cd.members order by joindate desc limit 1
+--below is the how the instructor went about it
+select max(joindate) as latest_signbup from cd.members
+
+--10 Produce a count of the number of facilities thatt have a cost ot guests of 10 or more.
+select * from cd.facilities
+select count(guestcost) from cd.facilities where guestcost > 10
 
 --Produce a list of the total number of slots booked pper facility in the month of september 2012.
 --Produce an output table consisting of facility id and slots, sorted by the number of slots.
